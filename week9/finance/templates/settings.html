@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Settings
+{% endblock %}
+
+{% block main %}
+
+        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+            Change Password
+          </button>
+          <form class="dropdown-menu p-4" action="{{ url_for('change_password') }}" method="POST">
+            <div class="mb-3">
+              <label for="exampleDropdownFormPassword2" class="form-label">Old Password</label>
+              <input required name=oldpassword type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Old Password">
+            </div>
+            <div class="mb-3">
+              <label for="exampleDropdownFormPassword2" class="form-label">New Password</label>
+              <input required name=newpassword type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="New Password">
+            </div>
+            <div class="mb-3">
+              <label for="exampleDropdownFormPassword2" class="form-label">Confirmation</label>
+              <input required name=confirmation type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Confirmation">
+            </div>
+            <button type="submit" class="btn btn-primary">Change</button>
+          </form>
+
+
+
+          <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+            Change Username
+          </button>
+          <form class="dropdown-menu p-4" action="{{ url_for('change_username') }}" method="POST">
+            <div class="mb-3">
+              <label for="exampleDropdownFormPassword2" class="form-label">Old username</label>
+              <input required name=oldusername type="text" class="form-control" id="exampleDropdownFormPassword2" placeholder="Old Username">
+            </div>
+            <div class="mb-3">
+              <label for="exampleDropdownFormPassword2" class="form-label">New username</label>
+              <input required name=newusername type="text" class="form-control" id="exampleDropdownFormPassword2" placeholder="New Username">
+            </div>
+            <div class="mb-3">
+              <label for="exampleDropdownFormPassword2" class="form-label">Password</label>        
+              <input required name=confirmation type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Enter your password">
+            </div>
+            <button type="submit" class="btn btn-primary">Change</button>
+          </form>
+
+
+
+          <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+            Add Cash
+          </button>
+          <form class="dropdown-menu p-4" action="{{ url_for('add_cash') }}" method="POST">
+            <div class="mb-3">
+              <label for="exampleDropdownFormPassword2" class="form-label">Account Number</label>
+              <input required name=account_number type="text" class="form-control" id="exampleDropdownFormPassword2" placeholder="Your Account">
+            </div>
+            <div class="mb-3">
+              <label for="exampleDropdownFormPassword2" class="form-label">Amount</label>
+              <input required name=amount type="text" class="form-control" id="exampleDropdownFormPassword2" placeholder="Amount Determination">
+            </div>
+            <div class="mb-3">
+              <label for="exampleDropdownFormPassword2" class="form-label">Confirmation</label>
+              <input required name=confirmation type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Confirmation">
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+          </form>
+
+
+
+{% endblock %}
